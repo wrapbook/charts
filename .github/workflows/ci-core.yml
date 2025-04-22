@@ -113,9 +113,9 @@ jobs:
           operator:
             enabled: true
             podMonitor:
-              enabled: true
+              enabled: false
             serviceMonitor:
-              enabled: true
+              enabled: false
               relabelings:
               - regex: (go_.*)
                 action: drop
@@ -213,7 +213,7 @@ jobs:
 
     - name: Verify scaledobjects.keda.sh CRD is installed
       run: kubectl get crd/scaledobjects.keda.sh -o wide
-    
+
     - name: Verify cloudeventsources.eventing.keda.sh CRD is installed
       run: kubectl get crd/cloudeventsources.eventing.keda.sh -o wide
 
